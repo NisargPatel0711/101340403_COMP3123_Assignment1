@@ -6,7 +6,7 @@ const userRoute = require("./routes/userRoutes");
 
 const DB_URL =
     "mongodb+srv://nisarg0711:nishu@cluster0.c6toxmm.mongodb.net/comp3123_assignment1?retryWrites=true&w=majority";
-const PORT_NUMBER = 8081;
+const PORT_NUMBER = process.env.PORT || 8081;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
