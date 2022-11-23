@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Assignment 01 for COMP3123 - Making Restful CRUD API for users and employees.",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
