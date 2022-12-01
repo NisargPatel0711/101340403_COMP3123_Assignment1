@@ -7,7 +7,7 @@ router.post("/employees", async (req, res) => {
     try {
         const newEmployee = new EmployeeModel(req.body);
         const employee = await newEmployee.save();
-        res.status(201).send(employee);
+        res.status(201).json(employee);
     } catch (error) {
         res.status(400).send(error);
     }
