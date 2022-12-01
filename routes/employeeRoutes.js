@@ -26,7 +26,7 @@ router.post("/employees", async (req, res) => {
 router.get("/employees", async (req, res) => {
     try {
         const employees = await EmployeeModel.find();
-        res.status(200).send(employees);
+        res.status(200).json(employees);
     } catch (error) {
         res.status(400).send(error);
     }
@@ -41,7 +41,7 @@ router.get("/employees/:eid", async (req, res) => {
                 status: false,
                 message: "No Employee Found",
             });
-        res.status(200).send(employee);
+        res.status(200).json(employee);
     } catch (error) {
         res.status(400).send(error);
     }
