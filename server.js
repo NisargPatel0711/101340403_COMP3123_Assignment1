@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const employeeRoute = require("./routes/employeeRoutes");
 const userRoute = require("./routes/userRoutes");
+const cors = require('cors')
 
 const DB_URL = process.env.DB_URL ||
     "mongodb+srv://nisarg0711:nishu@cluster0.c6toxmm.mongodb.net/comp3123_assignment1?retryWrites=true&w=majority";
@@ -10,6 +11,7 @@ const PORT_NUMBER = process.env.PORT || 8081;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.use(cors())
 
 mongoose.Promise = global.Promise;
 
