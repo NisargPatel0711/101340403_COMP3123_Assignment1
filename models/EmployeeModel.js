@@ -1,11 +1,5 @@
 const mongoose = require("mongoose");
 
-// email validation format
-const validateEmail = function (email) {
-    let re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return re.test(email);
-};
-
 // Employee Schema Model
 const employeeSchema = new mongoose.Schema({
     first_name: {
@@ -23,11 +17,6 @@ const employeeSchema = new mongoose.Schema({
         required: true,
         unique: true,
         maxLength: 50,
-        validate: [validateEmail, "Please fill a valid email address"],
-        match: [
-            /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-            "Please fill a valid email address",
-        ],
         trim: true,
         lowercase: true,
     },
